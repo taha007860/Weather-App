@@ -14,8 +14,8 @@ In this project, we will leverage the OpenWeatherMap API to retrieve current wea
    ```bash
    git clone https://github.com/your-username/weather-app.git
 Navigate to the project directory:
-```bash
-cd weather-app
+   ```bash
+   cd weather-app
 
 ## Steps
 Open index.html in your preferred web browser or set up a local server.

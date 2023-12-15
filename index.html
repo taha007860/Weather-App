@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <link rel="stylesheet" href="style.css">
+<body>
+  <div class="container">
+     <div class="searchContainer">
+        <input type="text" placeholder="Enter a city name" />
+        <button class="search-icon"><img src="images/search.png" alt="search-icon"/></button>
+     </div>
+     <p id="error"></p>
+     <div class="weather">
+     <img src="images/rain.png" alt="status" width="224" height="224"/>
+     <p id="temp">16°C</p>
+     <p id="city">Beirut</p>
+     </div>
+     <div class="status">
+        <div class="col">
+            <img src="images/humidity.png" alt="humidity" width="50px" height="50px"/>
+            <div>
+            <p id="humidity">55%</p>
+            <p>Humidity</p>
+            </div>
+        </div>
+        <div class="col">
+            <img src="images/wind.png" alt="wind" width="50px" height="50px"/>
+            <div>
+            <p id="wind">3.09 km/h</p>
+            <p>Wind Speed</p>
+            </div>
+        </div>
+     </div>
+  </div>
+  <script>
+const apiKey = "99c0c886c3cc097db4f2e3f068e53b5d";
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+const temp = document.querySelector(".weather #temp");
+const cityName = document.querySelector(".weather #city");
+const humidity = document.querySelector(".col div #humidity");
+const wind = document.querySelector(".col div #wind");
+const search = document.querySelector(".search-icon");
+const input = document.querySelector(".searchContainer input");
+const container = document.querySelector(".container");
+const weather = document.querySelector(".weather");
+const status = document.querySelector(".status");
+const errorPar = document.querySelector("#error");
+const image = document.querySelector(".weather img");
+function checkWeather(city) {
+  fetch(apiUrl + city + `&appid=${apiKey}`)
+    .then(response => response.json())
+    .then(data => {
+      temp.innerHTML = data.main.temp + "°C";
+      cityName.innerHTML = data.name;
+      wind.innerHTML = data.wind.speed + " km/h";
+      humidity.innerHTML = data.main.humidity + "%";
+      container.style.height = "100%";
+      container.style.marginTop = "0";
+      weather.style.display = "flex";
+      status.style.display = "flex";
+      if(data.weather[0].main == "Thunderstorm") {
+        image.src = 'images/thunderstorm.png';
+      }
+      else if(data.weather[0].main == "Drizzle") {
+        image.src = 'images/drizzle.png';
+      }
+      else if(data.weather[0].main == "Rain") {
+        image.src = 'images/rain.png';
+      }
+      else if(data.weather[0].main == "Snow") {
+        image.src = 'images/snow.png';
+      }
+      else if(data.weather[0].main == "Mist") {
+        image.src = 'images/mist.png';
+      }
+      else if(data.weather[0].main == "Smoke") {
+        image.src = 'images/smoke.png';
+      }
+      else if(data.weather[0].main == "Haze") {
+        image.src = 'images/haze.png';
+      }
+      else if(data.weather[0].main == "Dust") {
+        image.src = 'images/dust.png';
+      }
+      else if(data.weather[0].main == "Fog") {
+
+      }
+      else if(data.weather[0].main == "Sand") {
+        image.src = 'images/sand.png';
+      }
+      else if(data.weather[0].main == "Ash") {
+        image.src = 'images/ash.png';
+      }
+      else if(data.weather[0].main == "Squall") {
+        image.src = 'images/squall.png';
+      }
+      else if(data.weather[0].main == "Tornado") {
+        image.src = 'images/tornado.png';
+      }
+      else if(data.weather[0].main == "Clear") {
+        image.src = 'images/clear.png';
+      }
+      else if(data.weather[0].main == "Clouds") {
+        image.src = 'images/clouds.png';
+      }
+      
+    })
+    .catch(error => {
+      console.log("Error:", error);
+      errorPar.style.display = "block";
+      errorPar.innerHTML = "Invalid City Name";
+      errorPar.style.marginTop = "30px";
+      errorPar.style.marginLeft = "40px";
+      container.style.height = "25vh";
+      container.style.marginTop = "40vh";
+      weather.style.display = "none";
+      status.style.display = "none";
+    });
+      errorPar.style.display = "none";
+}
+
+search.addEventListener('click', () => {
+  checkWeather(input.value);
+});
+
+  </script>
+</body>
+</html>
+

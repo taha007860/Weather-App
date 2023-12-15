@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-color: #222;
+}
+.container {
+    width: 400px;
+    max-width: 400px;
+    background: linear-gradient(135deg, lightgreen, #70A3C0);
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 20vh;
+    margin-top: 40vh;
+}
+.searchContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: 25px;
+}
+.searchContainer input {
+    border: none;
+    outline: none;
+    flex: 0.9;
+    padding: 15px;
+    margin-left: 30px;
+    border-radius: 30px;
+}
+.searchContainer .search-icon {
+    border-radius: 50%;
+    padding: 15px;
+    border: none;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.searchContainer img {
+    width: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.weather {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+}
+.weather img {
+    margin-top: 30px;
+}
+.weather p {
+    color: white;
+}
+.weather #temp {
+    font-size: 50px;
+}
+.weather #city {
+    font-size: 30px;
+}
+.status {
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    display: none;
+}
+.status .col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-left: 15px;
+}
+.status .col div p {
+    color: white;
+    margin-left: 10px;
+    font-size: 20px;
+}
+#error{
+    display: none;
+    color: white;
+}
+/* Tablets */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .status{
+        margin-top: 10px;
+    }
+    .weather img {
+        margin-top: 10px;
+    }
+    .container {
+        height: 100%;
+    }
+    .searchContainer {
+        top: 0
+    }
+  }
+  
+  /* Mobile Devices */
+  @media only screen and (max-width: 767px) {
+    .status{
+        margin-top: 10px;
+    }
+    .weather img {
+        margin-top: 10px;
+    }
+    .container {
+        height: 100%;
+    }
+    .searchContainer {
+        top: 0
+    }
+    
+  }

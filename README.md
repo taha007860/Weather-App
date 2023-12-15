@@ -35,7 +35,7 @@ In this project, we will leverage the OpenWeatherMap API to retrieve current wea
 - Add event listeners to trigger weather data retrieval based on user input.
 
 ## Watch Demo:
-https://github.com/taha007860/Weather-App/assets/96583299/4a170a1b-b3d5-4375-a698-5fd0e25526d8
+https://github.com/taha007860/Weather-App/assets/96583299/09e801c7-1d1c-493a-9dea-821ad2c8ca7a
 
 ## Contributing
 Contributions are encouraged! If you encounter issues or have suggestions, open an issue or submit a pull request.

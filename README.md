@@ -34,6 +34,9 @@ In this project, we will leverage the OpenWeatherMap API to retrieve current wea
 - Implement a search box where users can input the city name.
 - Add event listeners to trigger weather data retrieval based on user input.
 
+## Watch Demo:
+https://github.com/taha007860/Weather-App/assets/96583299/4a170a1b-b3d5-4375-a698-5fd0e25526d8
+
 ## Contributing
 Contributions are encouraged! If you encounter issues or have suggestions, open an issue or submit a pull request.
 

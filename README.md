@@ -14,7 +14,7 @@ In this project, we will leverage the OpenWeatherMap API to retrieve current wea
    ```bash
    git clone https://github.com/your-username/weather-app.git
    
-   Navigate to the project directory:
+2. Navigate to the project directory:
    ```bash
    cd weather-app
 
